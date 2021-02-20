@@ -4,7 +4,7 @@ begin-app
 @static
 
 @http
-get /api
+get /todos
 
 @tables
 data
