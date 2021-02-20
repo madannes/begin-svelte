@@ -7,7 +7,7 @@ exports.handler = async function http (req) {
     },
     statusCode: 200,
     body: JSON.stringify({
-      msg: 'Hello from Svelte + your Begin API!'
+      msg: 'Hola from Begin.com =)'
     })
   }
 }
