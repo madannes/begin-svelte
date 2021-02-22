@@ -8,7 +8,7 @@
 
   async function onSubmit() {
     const response = await fetch("/todos", { method: "POST", body: newTodo });
-    const createdTodo = response.json();
+    const createdTodo = await response.json();
     todos.push(createdTodo);
     newTodo = "";
   }
