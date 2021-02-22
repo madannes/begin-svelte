@@ -10,6 +10,6 @@ exports.handler = async function http(req) {
     },
     statusCode: 201,
     location: `/todos/${result.key}`,
-    body: JSON.stringify(result.todo),
+    body: JSON.stringify(result),
   };
 };
