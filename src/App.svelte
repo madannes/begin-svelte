@@ -19,7 +19,7 @@
 </header>
 
 <main>
-  <ul>
+  <ul id='todo-list'>
     {#each todos as item}
       <li>{item.todo}</li>
     {/each}
@@ -45,5 +45,9 @@
     text-transform: uppercase;
     font-size: 4em;
     font-weight: 100;
+  }
+
+  #todo-list {
+    margin-right: 2em;
   }
 </style>
