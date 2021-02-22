@@ -1,7 +1,7 @@
 const data = require("@begin/data");
 
 exports.handler = async function http(req) {
-  const result = await data.get({ table: "todos", todo: req.body });
+  const result = await data.set({ table: "todos", todo: req.body });
   return {
     headers: {
       "content-type": "application/json; charset=utf8",
