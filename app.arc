@@ -5,6 +5,7 @@ begin-app
 
 @http
 get /todos
+post /todos
 
 @tables
 data

@@ -1,23 +1,40 @@
 <script>
   import { onMount } from "svelte";
   export let todos;
+  let newTodo;
   onMount(async () => {
     todos = await (await fetch("/todos")).json();
   });
+
+  async function onSubmit() {
+    const response = await fetch("/todos", { method: "POST", body: newTodo });
+    const createdTodo = response.json();
+    todos.push(createdTodo);
+    newTodo = "";
+  }
 </script>
 
-<main>
+<header>
   <h1>TODOs</h1>
+</header>
+
+<main>
   <ul>
     {#each todos as todo}
-    <li>{todo.name}</li>
+      <li>{todo.name}</li>
     {/each}
   </ul>
+  <form on:submit|preventDefault={onSubmit}>
+    <input type="text" bind:value={newTodo} />
+    <button type="submit">Add</button>
+  </form>
 </main>
+
+<footer>the end</footer>
 
 <style>
   main {
-    text-align: center;
+    display: flex;
     padding: 1em;
     max-width: 800px;
     margin: 0 auto;
