@@ -20,8 +20,8 @@
 
 <main>
   <ul>
-    {#each todos as todo}
-      <li>{todo.name}</li>
+    {#each todos as item}
+      <li>{item.todo}</li>
     {/each}
   </ul>
   <form on:submit|preventDefault={onSubmit}>
